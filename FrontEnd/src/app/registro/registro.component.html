@@ -1,0 +1,148 @@
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registrar Cuenta</h3>
+                        <form [formGroup]="formularioContacto" (ngSubmit)="submit()">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="nombre" formControlName="nombre"
+                                            class="form-control form-control-lg" nombre="nombre" required />
+                                        <label class="form-label" for="nombre">Nombre Completo</label>
+                                    </div>
+                                    <div class="error">
+                                        <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['required']">
+                                            (El nombre no puede quedar vacío)
+                                        </span>
+                                        <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['minlength']">
+                                            (Debe tener como mínimo 10 caracteres)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="email" id="correo" formControlName="correo"
+                                            class="form-control form-control-lg" correo="correo" required />
+                                        <label class="form-label" for="correo">Correo Electrónico</label>
+                                    </div>
+                                    <div class="error">
+                                        <span *ngIf="this.formularioContacto.get('correo')?.errors?.['required']">
+                                            (El correo no puede quedar vacío)
+                                        </span>
+                                        <span *ngIf="this.formularioContacto.get('correo')?.errors?.['pattern']">
+                                            (El correo no es válido)
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                    <div class="form-outline datepicker w-100">
+                                        <input type="number" class="form-control form-control-lg" id="altura"
+                                            formControlName="altura" altura="altura" required />
+                                        <label class="form-label" for="altura">Altura(cm)</label>
+                                    </div>
+                                    <div class="error">
+                                        <span *ngIf="this.formularioContacto.get('altura')?.errors?.['required']">
+                                            (La altura no puede quedar vacía)
+                                        </span>
+                                        <span *ngIf="this.formularioContacto.get('altura')?.errors?.['min']">
+                                            (Debe medir como mínimo 100cm)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <h6 class="mb-2 pb-1">Género: </h6>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" formControlName="genero"
+                                            name="genero" id="hombre" value="option1" checked />
+                                        <label class="form-check-label">Hombre</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" formControlName="genero"
+                                            name="genero" id="mujer" value="option2" />
+                                        <label class="form-check-label">Mujer</label>
+                                    </div>
+
+                                    <div class="error">
+                                        <span *ngIf="this.formularioContacto.get('genero')?.errors?.['required']">
+                                            (Debe elegir un genero)
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="number" id="peso" formControlName="peso"
+                                            class="form-control form-control-lg" peso="peso" required />
+                                        <label class="form-label" for="peso">Peso(Kg)</label>
+                                    </div>
+                                    <div class="error">
+                                        <span *ngIf="this.formularioContacto.get('peso')?.errors?.['required']">
+                                            (El peso no puede quedar vacío)
+                                        </span>
+                                        <span *ngIf="this.formularioContacto.get('peso')?.errors?.['min']">
+                                            (Debe pesar como mínimo 20Kg)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div class="form-outline">
+                                        <input type="password" id="contrasena" formControlName="contrasena"
+                                            class="form-control form-control-lg" contrasena="contrasena" required />
+                                        <label class="form-label" for="contrasena">Contraseña</label>
+                                    </div>
+                                    <div class="error">
+                                        <span *ngIf="this.formularioContacto.get('contrasena')?.errors?.['required']">
+                                            (La contraseña no puede quedar vacía)
+                                        </span>
+                                        <span *ngIf="this.formularioContacto.get('contrasena')?.errors?.['minlength']">
+                                            (Debe tener como mínimo 5 caracteres)
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div class="form-outline">
+                                        <input type="password" id="confirmar" formControlName="confirmar"
+                                            class="form-control form-control-lg" confirmar="confirmar" required />
+                                        <label class="form-label" for="confirmar">Confirmar Contraseña</label>
+                                    </div>
+                                    <div class="error">
+                                        <span *ngIf="this.formularioContacto.get('confirmar')?.errors?.['required']">
+                                            (El confirmar contraseña no puede quedar vacío)
+                                        </span>
+                                        <span *ngIf="this.formularioContacto.get('confirmar')?.errors?.['MustMatch']">
+                                            (Las contraseñas no coinciden)
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div [ngClass]="'resultado-grande'">{{resultado}}</div>
+                            <div class="mt-2 pt-2">
+                                <input class="btn btn-primary btn-lg" type="submit" value="Registrarse" id="enviar" />
+                            </div>
+                            <div class="text-center">
+                                <p>¿Ya tienes una cuenta? <a class="text-success" href="/sesion">INICIAR SESIÓN</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

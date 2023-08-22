@@ -1,0 +1,68 @@
+<section>
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start"
+        style="background-color: linear-gradient(45deg,#A0E739,#09cac0 )">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="my-5 display-3 fw-bold ls-tight">
+                        La mejor página <br />
+                        <span class="text-primary">para tu salud</span>
+                    </h1>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body py-5 px-md-5">
+                            <form [formGroup]="formularioContacto" (ngSubmit)="submit()">
+                                <!-- correo input -->
+                                <div class="form-outline mb-2">
+                                    <input type="email" id="correo"  formControlName="correo" class="form-control"  required/>
+                                    <label class="form-label" for="correo">Correo Electrónico</label>
+                                </div>
+                                <div class="error">
+                                    <span *ngIf="this.formularioContacto.get('correo')?.errors?.['required']">
+                                        (El correo no puede quedar vacío)
+                                    </span>
+                                    <span *ngIf="this.formularioContacto.get('correo')?.errors?.['pattern']">
+                                        (El correo no es válido)
+                                    </span>
+                                </div>
+                                <!-- Password input -->
+                                <div class="form-outline mb-2">
+                                    <input type="password" id="contrasena" formControlName="contrasena" class="form-control" required />
+                                    <label class="form-label" for="contrasena">Contraseña</label>
+                                </div>
+                                <div class="error">
+                                    <span *ngIf="this.formularioContacto.get('contrasena')?.errors?.['required']">
+                                        (La contraseña no puede quedar vacía)
+                                    </span>
+                                      <span *ngIf="this.formularioContacto.get('contrasena')?.errors?.['minlength']">
+                                        (Debe tener como mínimo 5 caracteres)
+                                    </span>
+                                </div>
+                                <div class="mb-2">
+                                        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"  required></ngx-recaptcha2>
+                                </div>
+                                <div class="error">
+                                    <span *ngIf="this.formularioContacto.get('recaptcha')?.errors?.['required']">
+                                        ( Debe completar el captcha) 
+                                    </span>
+                                </div>
+                                
+                                <!-- Submit button -->
+                                <div [ngClass]="'resultado-grande'">{{resultado}}</div>
+                                <button type="submit" class="btn btn-success btn-block mb-5"  id="enviar">
+                                    Iniciar Sesión
+                                </button>
+                                <!-- Register buttons -->
+                                <div class="text-center">
+                                    <p>¿No eres miembro? <a class="text-success" href="/registro">Registrate</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

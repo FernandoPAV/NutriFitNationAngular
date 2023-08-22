@@ -1,0 +1,68 @@
+{
+  "usuario": [
+    {
+      "nombre": "lucaschavez",
+      "correo": "lucas@gmail.com",
+      "altura": 169,
+      "peso": 69,
+      "contrasena": "kkkkk",
+      "id": 1
+    },
+    {
+      "nombre": "josegodines",
+      "correo": "jose@gmail.com",
+      "altura": 200,
+      "peso": 69,
+      "contrasena": "lucaskkk",
+      "id": 2
+    },
+    {
+      "nombre": "andreweta",
+      "correo": "carlo@gmail.com",
+      "altura": 150,
+      "peso": 20,
+      "contrasena": "kkkkk",
+      "id": 3
+    },
+    {
+      "nombre": "khyronpajaro",
+      "correo": "kbotas@gmail.com",
+      "altura": 172,
+      "peso": 80,
+      "contrasena": "neeko",
+      "id": 4
+    },
+    {
+      "nombre": "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+      "correo": "lucas@gmail.com",
+      "altura": 120,
+      "peso": 111,
+      "contrasena": "11111",
+      "id": 5
+    },
+    {
+      "nombre": "lucaschavez",
+      "correo": "asdasda@gmail.com",
+      "altura": 123,
+      "peso": 123,
+      "contrasena": "123123",
+      "id": 6
+    },
+    {
+      "nombre": "asdasdasdasd",
+      "correo": "carlogay@gmail.com",
+      "altura": 123,
+      "peso": 123,
+      "contrasena": "123123",
+      "id": 7
+    },
+    {
+      "nombre": "lucaschavez",
+      "correo": "kbotas@gmail.com",
+      "altura": 123,
+      "peso": 123,
+      "contrasena": "123123",
+      "id": 8
+    }
+  ]
+}
